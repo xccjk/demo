@@ -39,3 +39,54 @@
   // src/index.js
   import _ from 'lodash'
 ```
+
+
+### commit 03
+
+1. 资源处理，包含图片，字体，json，css等资源
+
+```
+  yarn add style-loader css-loader --save-dev
+
+  yarn add file-loader --save-dev
+
+  yarn add csv-loader xml-loader --save-dev
+```
+
+```
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(jpg|png|svg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.(csv|tsv)$/,
+        use: [
+          'csv-loader'
+        ]
+      },
+      {
+        test: /\.xml$/,
+        use: [
+          'xml-loader'
+        ]
+      }
+    ]
+  }
+```
