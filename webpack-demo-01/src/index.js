@@ -1,22 +1,20 @@
-import _ from 'lodash'
-import './index.css'
-import icon from './icon.png'
-import Data from './data.xml'
+import printMe from './print.js'
 
 function component() {
   let element = document.createElement('h2')
 
-  element.innerHTML = _.join(['Hello', 'xcc'], ' ')
+  let btn = document.createElement('button')
 
-  console.log(Data)
+  btn.innerHTML = 'click me'
+
+  btn.onclick = printMe
+
+  element.innerHTML = 'Hello xcc'
+
+  element.appendChild(btn)
 
   return element
 }
 
-const img = new Image()
-
-img.src = icon
 
 document.body.appendChild(component())
-
-document.body.append(img)

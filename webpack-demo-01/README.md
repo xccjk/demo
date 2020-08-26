@@ -90,3 +90,58 @@
     ]
   }
 ```
+
+### commit 03
+
+1. 文件多入口配置 => 手动在index.html文件中引入多个入口打包出的js文件
+2. 常用webpack相关插件
+   1. html-webpack-plugin
+   2. clean-webpack-plugin
+
+
+
+```
+  const path = require('path')
+  const HtmlWebpackPlugin = require('html-webpack-plugin')
+  const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+  module.exports = {
+    mode: 'none',
+    // 多入口配置
+    entry: {
+      app: './src/index.js',
+      print: './src/print.js'
+    },
+    output: {
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist')
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: 'hello xcc'
+      }),
+      new CleanWebpackPlugin(['dist'])
+    ]
+  }
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
