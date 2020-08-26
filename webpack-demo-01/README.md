@@ -26,3 +26,16 @@
     }
   }
 ```
+
+
+### commit 02
+
+1. 移除html文件中lodash script文件的引入，通过yarn add lodash --save-dev安装lodash依赖
+2. src/index.js通过import依赖lodash获取其方法
+
+```
+  yarn add lodahs --save
+  
+  // src/index.js
+  import _ from 'lodash'
+```
