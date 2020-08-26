@@ -1,6 +1,6 @@
-## webpack打包流程梳理
+# webpack打包流程梳理
 
-### commit 01
+## commit 01
 
 1. 原始阶段，手动引入三方依赖lodash，js文件中依赖lodash方法
    1. 手动创建index.html文件，在其中引入lodash script文件，并且引入打包后生成的bundle.js文件
@@ -28,7 +28,7 @@
 ```
 
 
-### commit 02
+## commit 02
 
 1. 移除html文件中lodash script文件的引入，通过yarn add lodash --save-dev安装lodash依赖
 2. src/index.js通过import依赖lodash获取其方法
@@ -41,7 +41,7 @@
 ```
 
 
-### commit 03
+## commit 03
 
 1. 资源处理，包含图片，字体，json，css等资源
 
@@ -91,7 +91,7 @@
   }
 ```
 
-### commit 03
+## commit 04
 
 1. 文件多入口配置 => 手动在index.html文件中引入多个入口打包出的js文件
 2. 常用webpack相关插件
@@ -103,7 +103,7 @@
 ```
   const path = require('path')
   const HtmlWebpackPlugin = require('html-webpack-plugin')
-  const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+  const {  } = require('clean-webpack-plugin')
 
   module.exports = {
     mode: 'none',
@@ -125,6 +125,14 @@
   }
 ```
 
+
+## commit 05
+
+1. 不同模式的source map对错误排查，打包效率的影响，通过devtool来设置模式
+2. watch模式下，当使用了CleanWebpackPlugin与HtmlWebpackPlugin时，修改了js文件，index.html文件被删除
+3. 观察模式的使用，watch会监听文件的修改
+4. live reloading webpack-dev-server的使用，通过webpack-dev-server启动一个web服务器，可以实现文件的修改监听及重新加载，不需要手动刷新浏览器
+5. webpack-dev-middleware是一个容器，可以把webpack处理后的文件传递给一个服务器(是服务端渲染用么？？？)
 
 
 

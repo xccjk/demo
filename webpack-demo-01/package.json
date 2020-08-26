@@ -5,7 +5,9 @@
   "author": "xcc",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "build:watch": "webpack --config webpack.config.watch.js",
+    "start": "webpack-dev-server --open"
   },
   "dependencies": {
     "clean-webpack-plugin": "^3.0.0",
