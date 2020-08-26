@@ -1,0 +1,15 @@
+{
+  "name": "webpack-demo-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "xcc",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
