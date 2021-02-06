@@ -36,6 +36,8 @@ import ClassModal from './modal/class'
 import HooksModal from './modal/hooks'
 
 import LifeCycle from './life_cycle'
+// h5分享截图
+import ShareComponent from './share'
 
 
 const routes = [
@@ -128,6 +130,11 @@ const routes = [
     path: '/lifecycle',
     exact: true,
     component: () => <LifeCycle />
+  },
+  {
+    path: '/share',
+    exact: true,
+    component: () => <ShareComponent />
   }
 ]
 
