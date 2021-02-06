@@ -7,7 +7,11 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --config webpack.config.watch.js",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build:basic": "webpack --config webpack.config.basic.js",
+    "build:watch1": "webpack --config webpack.config.watch1.js",
+    "dev:reload": "webpack-dev-server --config webpack.config.reload.js",
+    "dev:hmr": "webpack-dev-server --config webpack.config.hmr.js"
   },
   "dependencies": {
     "clean-webpack-plugin": "^3.0.0",

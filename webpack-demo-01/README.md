@@ -136,6 +136,44 @@
 
 
 
+## 模块热替换
+
+1. devServer: { hot: true }
+2. css文件在通过loader编译后，可以直接在修改后就热更新，而js文件在修改后，在不做处理的情况下，会刷新页面，之前的输入状态等信息都会刷新掉
+3. js文件需要通过module.hot方法来实现js文件修改的局部替换
+
+
+## tree shaking
+
+1. es2015 import与export语法中来做未使用代码的删除操作
+2. 实现将没有使用到的方法，函数在编译阶段删除，减小包体积。通过在package.json中设置sideEffects字段来处理
+   1. 对于有副作用的文件，通过在 sideEffects 中排除出去即可
+   2. 对于css中未使用的样式，一般不做处理(js动态设置样式)
+3. 文件编译打包阶段的压缩输出，通过设置mode为production或者压缩插件来处理
+
+
+## 生产环境构建
+
+1. 开发环境与生产环境，在打包配置上差异比较大
+   1. 开发环境
+      1. 要求编译速度快
+      2. 热模块重载
+      3. source map 错误迅速定位，行，列显示完整
+      4. localhost serve
+   2. 生产环境
+      1. 更小的bundle文件
+      2. 更轻量的source map 线上问题定位相对方便，同时也不会暴露源码
+      3. 资源的优化，图片，字体，json，css
+2. 一般的webpack文件配置模式
+   1. config/webpack.config.js
+   2. config/webpack.common.js  // 通用配置文件
+   3. config/webpack.local.js
+   4. config/webpack.dev.js
+   5. config/webpack.prod.js
+
+
+
+
 
 
 
