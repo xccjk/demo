@@ -36,8 +36,12 @@ import ClassModal from './modal/class'
 import HooksModal from './modal/hooks'
 
 import LifeCycle from './life_cycle'
+
 // h5分享截图
 import ShareComponent from './share'
+
+// lottie web
+import Lottie from './lottie'
 
 
 const routes = [
@@ -135,6 +139,11 @@ const routes = [
     path: '/share',
     exact: true,
     component: () => <ShareComponent />
+  },
+  {
+    path: '/lottie',
+    exact: true,
+    component: () => <Lottie />
   }
 ]
 
